@@ -1,0 +1,21 @@
+    name: Deploy Application
+
+    on:
+      push:
+        branches:
+          - main # Trigger on pushes to the main branch
+
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest # Specify the runner environment
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v4 # Action to check out your code
+
+          - name: Build and deploy
+            run: |
+              # Add your build commands here
+              # Example: npm install && npm run build
+              # Add your deployment commands here
+              # Example: rsync -avz --delete build/ user@your-server:/var/www/html/
